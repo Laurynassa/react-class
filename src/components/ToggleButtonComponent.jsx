@@ -1,38 +1,27 @@
 import React, { Component, useState } from "react";
 import { useUnique } from "../useUnique";
 
-export class ColorBasicComponent extends Component {
+export class ToggleButtonComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { backgroundColor: "purple" };
-    // this.showProps = this.showProps.bind(this) //trecias varijantas
+    this.state = {
+      backgroundColor: "purple",
+      isToggleOn: false,
+    };
   }
-  // pirmas budas del undefined kad nebutu eror  showProps = () => {
-  //     console.log(this.props)
-  //   showProps(event) {
-  //     console.log(this.props)
-  //     console.log(event)
-  //   }
 
   handleButtonClick = () => {
     // Toggle between purple and green
-    const newColor = this.state.isToggleOn ? "purple" : "red";
+    const newColor = this.state.isToggleOn ? "purple" : "green";
     this.setState((prevState) => ({
       backgroundColor: newColor,
       isToggleOn: !prevState.isToggleOn,
     }));
   };
+
   render() {
     return (
-      <div style={{ color: this.props.color, backgroundColor: this.props.bg }}>
-        <p>{this.props.text}</p>
-        {/* <button onClick={() => this.showProps()}>Click</button> antras varijantas  */}
-        <button
-          onClick={this.changeBg}
-          style={{ backgroundColor: this.state.backgroundColor }}
-        >
-          Click
-        </button>
+      <div>
         <ProductsList
           backgroundColor={this.state.backgroundColor}
           onButtonClick={this.handleButtonClick}
@@ -41,6 +30,7 @@ export class ColorBasicComponent extends Component {
     );
   }
 }
+
 function ProductsList({ backgroundColor, onButtonClick }) {
   const [names, add] = useUnique([]);
   const [newName, setNewName] = useState("");
@@ -67,4 +57,4 @@ function ProductsList({ backgroundColor, onButtonClick }) {
   );
 }
 
-export default ColorBasicComponent;
+export default ToggleButtonComponent;

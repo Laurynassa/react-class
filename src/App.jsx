@@ -1,10 +1,11 @@
-import './App.css'
-import styles from './styles/style.module.css'
-import className from 'classnames'
-import BasicClassComponent from './components/BasicClassComponent'
-import ColorBasicComponent from './components/ColorBasicComponent'
+import "./App.css";
+import styles from "./styles/style.module.css";
+import className from "classnames";
+import BasicClassComponent from "./components/BasicClassComponent";
+import ColorBasicComponent from "./components/ColorBasicComponent";
+import ToggleButtonComponent from "./components/ToggleButtonComponent";
 function App() {
-  let number = 1
+  // let number = 1;
   return (
     <div
       style={
@@ -19,13 +20,14 @@ function App() {
       className={className(styles.newStyle, styles.newStyle1)}
     >
       <p>labas as krabas, o tu kebabas </p>
-      <BasicClassComponent color="red" />
-      <BasicClassComponent color="yellow" />
+      {/* <BasicClassComponent color="red" />
+      <BasicClassComponent color="yellow" /> */}
+      {/* <ColorBasicComponent color="green" bg="white" text="labas vakaras ryte" />
       <ColorBasicComponent color="green" bg="white" text="labas vakaras ryte" />
-      <ColorBasicComponent color="green" bg="white" text="labas vakaras ryte" />
-      <ColorBasicComponent color="green" bg="white" text="labas vakaras ryte" />
+      <ColorBasicComponent color="green" bg="white" text="labas vakaras ryte" /> */}
+      <ToggleButtonComponent color="blue" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
